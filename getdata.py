@@ -1,8 +1,10 @@
 #coding:utf8
 import requests
 import pymongo
+from time import sleep
 
 #REGION=['us','eu','tw','kr']
+TIME_SLEEP=600
 REGION='us'
 REALM='medivh'
 LOCALE='en_US'
@@ -30,4 +32,6 @@ class wowAuction():
 
 if __name__=='__main__':
     wa=wowAuction()
-    wa.getData()
+    while True:
+        wa.getData()
+        sleep(TIME_SLEEP)
